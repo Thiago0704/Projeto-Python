@@ -1,0 +1,33 @@
+arquivo.close()
+            arquivo = open("total.txt", "a", encoding= "utf8")
+            t = float(livro[2])
+            valor = []
+            valor.append(t)
+            arquivo.write((f"{valor}"))
+            arquivo.close()
+        elif bruh == 2:
+            a = input("Digite o Nome do Livro: ")
+            arquivo = open(f"{a}.txt", "r")
+            print(arquivo.readlines())
+            arquivo.close()
+        elif bruh == 3:
+            a = (input("Digite o Livro que Se Deseja Modificar: "))
+            arquivo = open(f"{a}.txt", "r", encoding="utf8")
+            dados = arquivo.read()
+            t = (dados[2])*(-1)
+            if dados[3] == 1:
+                arquivo2 = open("ação e aventura.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f'{dados[0]}')
+                arquivo2.close()
+                arquivo2 = open("ação e aventura.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
+            elif dados[3] == 2:
+                arquivo2 = open("romance.txt", "r", encoding="utf8")
+                dados2 = arquivo2.readlines()
+                dados2.remove(f'{dados[0]}')
+                arquivo2.close()
+                arquivo2 = open("romance.txt", "w", encoding="utf8")
+                arquivo2.writelines(f"{dados2}")
+                arquivo2.close()
